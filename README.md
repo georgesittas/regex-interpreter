@@ -29,7 +29,7 @@ The following functions can be used after loading RegInterpreter.hs:
 • makeNfa : outputs an NFA (`Fsa`), given as input a regular expression (`[Char]`).\
 • nfaToDfa : outputs a DFA (`Fsa`), given as input an NFA (`Fsa`).\
 • regexFullMatch : receives a tuple `(regex,string)` and answers `True` if `string` is accepted by `regex`.\
-• regexPartMatch : receives a tuple `(regex,string)` and returns a list of all prefixes in `string` that are accepted by `regex`.
+• regexPartMatch : receives a tuple `(regex,string)` and returns all prefixes in `string` that are accepted by `regex`.
 
 ## Contributors
 
