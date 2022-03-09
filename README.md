@@ -14,22 +14,22 @@ and for the NFA to DFA conversion, the corresponding [Powerset construction](htt
 
 The interpreter accepts regular expressions that have the following form:
 
-• x, where x is a single character (eg. "a").\
-• "\_", denoting the _empty symbol_.\
-• ".", which matches _any_ character (like "?" in a bash shell, for example).\
-• (r), where r is a regular expression.\
-• r<sub>1</sub> | r<sub>2</sub>, where r<sub>1</sub> and r<sub>2</sub> are regular expressions (Union).\
-• r<sub>1</sub>r<sub>2</sub>, where r<sub>1</sub> and r<sub>2</sub> are regular expressions (Concatenation).\
-• r<sup>*</sup>, where r is a regular expression (Kleene star).
+• `x`, where x is a single character (eg. "a").\
+• `"\_"`, denoting the _empty symbol_.\
+• `"."`, which matches _any_ character (like "?" in a bash shell, for example).\
+• `(r)`, where r is a regular expression.\
+• `r1 | r2`, where `r1` and `r2` are regular expressions (Union).\
+• `r1r2`, where `r1` and `r2` are regular expressions (Concatenation).\
+• `r*`, where `r` is a regular expression (Kleene star).
 
 ## Functions
 
 The following functions can be used after loading RegInterpreter.hs:
 
-• makeNfa : outputs an NFA (of type "Fsa"), given as input a regular expression (of type "[Char]").\
-• nfaToDfa : outputs a DFA (of type "Fsa"), given as input an NFA (of type "Fsa").\
-• regexFullMatch : receives a tuple (regex,string) and answers true of 'string' is accepted by 'regex'.\
-• regexPartMatch : receives a tuple (regex,string) and returns a list of all prefixes in 'string' that are accepted by 'regex'.
+• makeNfa : outputs an NFA (`Fsa`), given as input a regular expression (`[Char]`).\
+• nfaToDfa : outputs a DFA (`Fsa`), given as input an NFA (`Fsa`).\
+• regexFullMatch : receives a tuple `(regex,string)` and answers `True` if `string` is accepted by `regex`.\
+• regexPartMatch : receives a tuple `(regex,string)` and returns a list of all prefixes in `string` that are accepted by `regex`.
 
 ## Contributors
 
