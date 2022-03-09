@@ -1,4 +1,4 @@
-# Regular Expression Interpreter
+# Regex Interpreter
 
 The interpreter consists of the following phases:
 
