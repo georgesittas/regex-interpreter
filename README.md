@@ -34,4 +34,4 @@ The following functions can be used after loading RegInterpreter.hs:
 ## Contributors
 
 • [George Sittas (Jo)](https://github.com/GeorgeSittas)\
-• [Jim Rontogiannis](https://github.com/JimRondo)
+• [Jim Rontogiannis](https://github.com/rondojim)
