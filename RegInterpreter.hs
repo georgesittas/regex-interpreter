@@ -1,4 +1,4 @@
-module RegInterpreter where
+module RegInterpreter (makeNfa, nfaToDfa, regexFullMatch, regexPartMatch) where
 
 import RegParser
 import Data.List
