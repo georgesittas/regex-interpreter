@@ -15,7 +15,7 @@ and for the NFA to DFA conversion, the corresponding [Powerset construction](htt
 The interpreter accepts regular expressions that have the following form:
 
 • `x`, where x is a single character (eg. "a").\
-• `"\_"`, denoting the _empty symbol_.\
+• `"_"`, denoting the _empty symbol_.\
 • `"."`, which matches _any_ character (like "?" in a bash shell, for example).\
 • `(r)`, where r is a regular expression.\
 • `r1 | r2`, where `r1` and `r2` are regular expressions (Union).\
