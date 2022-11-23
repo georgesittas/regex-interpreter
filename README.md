@@ -31,6 +31,19 @@ The following functions can be used after loading RegInterpreter.hs:
 • regexFullMatch : receives a tuple `(regex,string)` and answers `True` if `string` is accepted by `regex`.\
 • regexPartMatch : receives a tuple `(regex,string)` and returns all prefixes in `string` accepted by `regex`.
 
+## Testing
+
+```haskell
+➜  Regex-Interpreter git:(main) ghci testSuite.hs
+GHCi, version 9.2.4: https://www.haskell.org/ghc/  :? for help
+[1 of 3] Compiling RegParser        ( RegParser.hs, interpreted )
+[2 of 3] Compiling RegInterpreter   ( RegInterpreter.hs, interpreted )
+[3 of 3] Compiling Main             ( testSuite.hs, interpreted )
+Ok, three modules loaded.
+ghci> testAll
+True
+```
+
 ## Contributors
 
 • [George Sittas (Jo)](https://github.com/GeorgeSittas)\
