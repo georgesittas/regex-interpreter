@@ -1,4 +1,4 @@
-module RegInterpreter (makeNfa, nfaToDfa, regexFullMatch, regexPartMatch) where
+module RegInterpreter where
 
 import RegParser
 import Data.List
@@ -34,13 +34,13 @@ makeNfa' :: RegExpr -> StateId -> (StateId, Fsa)
 makeNfa' EmptyChar sid = (sid+2, ([sid,sid+1], [], [(sid,sid+1,'_')], sid, [sid+1]))
 makeNfa' AnyLetter sid = (sid+2, ([sid,sid+1], [], [(sid,sid+1,'.')], sid, [sid+1]))
 makeNfa' (Letter(x)) sid = (sid+2, ([sid,sid+1], [x], [(sid,sid+1,x)], sid, [sid+1]))
-makeNfa' (Union(x,y)) sid =
+makeNfa' (Union x y) sid =
   let (sid1, (s1,i1,t1,f1,[l1])) = makeNfa' x sid
       (sid2, (s2,i2,t2,f2,[l2])) = makeNfa' y sid1
       i = i1 ++ [c | c <- i2, c `notElem` i1]
       t = t1 ++ t2 ++ [(sid2,f1,'_'),(sid2,f2,'_'),(l1,sid2+1,'_'),(l2,sid2+1,'_')]
   in (sid2+2, (s1 ++ s2 ++ [sid2,sid2+1], i, t, sid2, [sid2+1]))
-makeNfa' (Concat(x,y)) sid =
+makeNfa' (Concat x y) sid =
   let (sid1, (s1,i1,t1,f1,[l1])) = makeNfa' x sid
       (sid2, (s2,i2,t2,f2,[l2])) = makeNfa' y sid1
       i = i1 ++ [c | c <- i2, c `notElem` i1]
