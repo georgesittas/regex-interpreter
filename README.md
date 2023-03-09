@@ -7,29 +7,31 @@ The interpreter consists of the following phases:
 3. Convert the NFA to an equivalent DFA
 4. Compute the DFA's result by feeding it the input string
 
-In order to create the NFA, we've implemented the known [Thompson's construction algorithm](https://en.wikipedia.org/wiki/Thompson%27s_construction),
-and for the NFA to DFA conversion, the corresponding [Powerset construction](https://en.wikipedia.org/wiki/Powerset_construction).
+The following algorithms have been implemented:
+
+- NFA creation: [Thompson's construction algorithm](https://en.wikipedia.org/wiki/Thompson%27s_construction)
+- NFA to DFA conversion: [Powerset construction](https://en.wikipedia.org/wiki/Powerset_construction)
 
 ## Syntax
 
-The interpreter accepts regular expressions that have the following form:
+The interpreter expects regular expressions to conform to the following syntax:
 
-• `x`, where x is a single character (eg. "a").\
-• `"_"`, denoting the _empty symbol_.\
-• `"."`, which matches _any_ character (like "?" in a bash shell, for example).\
-• `(r)`, where r is a regular expression.\
-• `r1 | r2`, where `r1` and `r2` are regular expressions (Union).\
-• `r1r2`, where `r1` and `r2` are regular expressions (Concatenation).\
-• `r*`, where `r` is a regular expression (Kleene star).
+• `x`, a single character.\
+• `"_"`, the _empty symbol_.\
+• `"."`, _any_ character.\
+• `(r)`, `r` is a regular expression.\
+• `r1 | r2`, `r1` and `r2` are regular expressions (Union).\
+• `r1r2`, `r1` and `r2` are regular expressions (Concatenation).\
+• `r*`, `r` is a regular expression (Kleene star).
 
 ## Functions
 
 The following functions can be used after loading RegInterpreter.hs:
 
-• makeNfa : outputs an NFA (`Fsa`), given as input a regular expression (`[Char]`).\
-• nfaToDfa : outputs a DFA (`Fsa`), given as input an NFA (`Fsa`).\
-• regexFullMatch : receives a tuple `(regex,string)` and answers `True` if `string` is accepted by `regex`.\
-• regexPartMatch : receives a tuple `(regex,string)` and returns all prefixes in `string` accepted by `regex`.
+- `makeNfa` outputs an NFA (`Fsa`), given as input a regular expression (`[Char]`).\
+- `nfaToDfa` outputs a DFA (`Fsa`), given as input an NFA (`Fsa`).\
+- `regexFullMatch` receives a tuple `(regex, string)` and returns `True` if `string` is accepted by `regex`.\
+- `regexPartMatch` receives a tuple `(regex, string)` and returns all prefixes in `string` accepted by `regex`.
 
 ## Testing
 
@@ -46,5 +48,5 @@ True
 
 ## Contributors
 
-• [George Sittas (Jo)](https://github.com/GeorgeSittas)\
+• [George Sittas](https://github.com/GeorgeSittas)\
 • [Jim Rontogiannis](https://github.com/rondojim)
