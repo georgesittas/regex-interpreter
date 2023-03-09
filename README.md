@@ -16,21 +16,21 @@ The following algorithms have been implemented:
 
 The interpreter expects regular expressions to conform to the following syntax:
 
-• `x`, a single character.\
-• `"_"`, the _empty symbol_.\
-• `"."`, _any_ character.\
-• `(r)`, `r` is a regular expression.\
-• `r1 | r2`, `r1` and `r2` are regular expressions (Union).\
-• `r1r2`, `r1` and `r2` are regular expressions (Concatenation).\
-• `r*`, `r` is a regular expression (Kleene star).
+- `x`, a single character.
+- `"_"`, the _empty symbol_.
+- `"."`, _any_ character.
+- `(r)`, `r` is a regular expression.
+- `r1 | r2`, `r1` and `r2` are regular expressions (Union).
+- `r1r2`, `r1` and `r2` are regular expressions (Concatenation).
+- `r*`, `r` is a regular expression (Kleene star).
 
 ## Functions
 
 The following functions can be used after loading RegInterpreter.hs:
 
-- `makeNfa` outputs an NFA (`Fsa`), given as input a regular expression (`[Char]`).\
-- `nfaToDfa` outputs a DFA (`Fsa`), given as input an NFA (`Fsa`).\
-- `regexFullMatch` receives a tuple `(regex, string)` and returns `True` if `string` is accepted by `regex`.\
+- `makeNfa` outputs an NFA (`Fsa`), given as input a regular expression (`[Char]`).
+- `nfaToDfa` outputs a DFA (`Fsa`), given as input an NFA (`Fsa`).
+- `regexFullMatch` receives a tuple `(regex, string)` and returns `True` if `string` is accepted by `regex`.
 - `regexPartMatch` receives a tuple `(regex, string)` and returns all prefixes in `string` accepted by `regex`.
 
 ## Testing
