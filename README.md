@@ -28,8 +28,8 @@ The interpreter expects regular expressions to conform to the following syntax:
 
 The following functions can be used after loading RegInterpreter.hs:
 
-- `makeNfa` receives a regular expression (`[Char]`) and returns an NFA (`Fsa`).
-- `nfaToDfa` receives an NFA (`Fsa`) and returns a DFA (`Fsa`).
+- `makeNfa` receives a regular expression (`[Char]`) & returns an NFA (`Fsa`).
+- `nfaToDfa` receives an NFA (`Fsa`) & returns a DFA (`Fsa`).
 - `regexFullMatch` receives a tuple `(regex, string)` & returns `True` if `string` is accepted by `regex`.
 - `regexPartMatch` receives a tuple `(regex, string)` & returns all prefixes in `string` accepted by `regex`.
 
